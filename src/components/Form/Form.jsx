@@ -1,5 +1,5 @@
 import { useState} from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import css from './Form.module.css';
 
@@ -76,7 +76,7 @@ export const Form = ({ contacts, onSubmit }) => {
   );
 };
 
-// Form.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-//   contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
-// };
+Form.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+};
