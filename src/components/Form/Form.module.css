@@ -1,0 +1,33 @@
+.formWrapper {
+  text-align: center;
+}
+
+.addBtn {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  border: thin;
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.addBtn:hover {
+  background-color: lawngreen;
+  color: white;
+}
+
+.title {
+  font-size: large;
+  font-weight: 600;
+  color: gray;
+}
+
+input {
+  padding: 0 10px;
+  height: 20px;
+}
