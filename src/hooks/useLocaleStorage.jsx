@@ -11,3 +11,4 @@ export const useLocaleStorage = (key, defaultValue) => {
 
   return [state, setState];
 };
+

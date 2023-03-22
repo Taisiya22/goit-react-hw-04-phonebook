@@ -4,6 +4,7 @@ import { ContactList } from '../ContactList/ContactList';
 import { Filter } from '../Filter/Filter';
 import { useLocaleStorage } from 'hooks/useLocaleStorage';
 import css from './App.module.css';
+import { useMemo } from 'react';
 
 export const App = () => {
   const [contacts, setContacts] = useLocaleStorage('contacts', []);
@@ -21,12 +22,19 @@ export const App = () => {
     setFilter(e.target.value);
   };
 
-  const getFilterContact = () => {
+  // const getFilterContact = () => {
+
+  // return contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filter.toLowerCase())
+  // );
+  // };
+
+  const getFilterContact = useMemo(() => {
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
-  };
-  const filterContact = getFilterContact();
+  }, [contacts, filter]);
+
   return (
     <div className={css.wrapper}>
       <Section title="Phone book">
@@ -36,7 +44,7 @@ export const App = () => {
         <>
           <Section title="Contacts" />
           <Filter value={filter} onChange={onChangeFilter} />
-          <ContactList contacts={filterContact} onDelete={onDelete} />
+          <ContactList contacts={getFilterContact} onDelete={onDelete} />
         </>
       )}
     </div>
