@@ -6,7 +6,7 @@ export const useLocaleStorage = (key, defaultValue) => {
   });
 
   useEffect(() => {
-    window.localStorage.setItem(key, JSON.stringify(state));
+   window.localStorage.setItem(key, JSON.stringify(state));
   }, [key, state]);
 
   return [state, setState];

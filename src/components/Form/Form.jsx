@@ -1,14 +1,11 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import css from './Form.module.css';
 
-
-
 export const Form = ({ contacts, onSubmit }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -24,7 +21,6 @@ export const Form = ({ contacts, onSubmit }) => {
     }
   };
 
-  
   const handleSubmit = e => {
     e.preventDefault();
     onSubmit({ id: nanoid(), name, number });
@@ -34,7 +30,6 @@ export const Form = ({ contacts, onSubmit }) => {
     }
 
     if (contacts.find(contact => contact.number === number)) {
-      alert(`This ${number} is already in contacts`);
     }
 
     reset();

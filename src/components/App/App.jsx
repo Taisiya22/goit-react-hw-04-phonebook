@@ -22,14 +22,8 @@ export const App = () => {
     setFilter(e.target.value);
   };
 
-  // const getFilterContact = () => {
-
-  // return contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(filter.toLowerCase())
-  // );
-  // };
-
   const getFilterContact = useMemo(() => {
+    console.log('memo');
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
